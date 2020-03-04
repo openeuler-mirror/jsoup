@@ -1,11 +1,10 @@
 Name:           jsoup
 Version:        1.11.3
-Release:        4
+Release:        5
 Summary:        Java HTML Parser
 License:        MIT
 URL:            http://jsoup.org/
-Source0:        %{name}-%{version}.tar.gz
-Source1:        generate-tarball.sh
+Source0:        https://github.com/jhy/jsoup/archive/jsoup-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  maven-local, mvn(org.apache.felix:maven-bundle-plugin)
@@ -34,5 +33,8 @@ for extracting and manipulating data, using the best of DOM, CSS, and jquery-lik
 %{_javadocdir}/%{name}/*
 
 %changelog
+* Wed Mar 4 2020 chenli <chenli147@huawei.com> - 1.11.3-5
+- Modify Spec.
+
 * Tue Dec 3 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.11.3-4
 - Package init
