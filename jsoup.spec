@@ -1,14 +1,14 @@
 Name:           jsoup
-Version:        1.11.3
-Release:        5
+Version:        1.14.2
+Release:        1
 Summary:        Java HTML Parser
 License:        MIT
 URL:            http://jsoup.org/
-Source0:        https://github.com/jhy/jsoup/archive/jsoup-%{version}.tar.gz
+Source0:        https://github.com/jhy/jsoup/archive/refs/tags/jsoup-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  maven-local, mvn(org.apache.felix:maven-bundle-plugin)
-Provides:       %{name}-javadoc%{?_isa} %{name}-javadoc
+Provides:	%{name}-javadoc%{?_isa} %{name}-javadoc
 Obsoletes:      %{name}-javadoc
 
 %description
@@ -19,7 +19,8 @@ for extracting and manipulating data, using the best of DOM, CSS, and jquery-lik
 %autosetup -n %{name}-%{name}-%{version} -p1
 
 %pom_remove_plugin :animal-sniffer-maven-plugin
-%pom_remove_plugin :maven-javadoc-plugin
+%pom_remove_plugin :japicmp-maven-plugin
+%pom_remove_plugin :maven-failsafe-plugin
 
 %build
 %mvn_build -f
@@ -33,6 +34,9 @@ for extracting and manipulating data, using the best of DOM, CSS, and jquery-lik
 %{_javadocdir}/%{name}/*
 
 %changelog
+* Fri Sep 3 2021 houyingchao <houyingchao@huawei.com> - 1.14.2-1
+- Upgrade to 1.14.2
+
 * Wed Mar 4 2020 chenli <chenli147@huawei.com> - 1.11.3-5
 - Modify Spec.
 
