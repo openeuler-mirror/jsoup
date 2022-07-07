@@ -1,10 +1,11 @@
 Name:           jsoup
 Version:        1.14.2
-Release:        1
+Release:        2
 Summary:        Java HTML Parser
 License:        MIT
 URL:            http://jsoup.org/
 Source0:        https://github.com/jhy/jsoup/archive/refs/tags/jsoup-%{version}.tar.gz
+Patch01:        Make-the-imports-of-javax.annotation-optional.patch
 BuildArch:      noarch
 
 BuildRequires:  maven-local, mvn(org.apache.felix:maven-bundle-plugin)
@@ -34,6 +35,9 @@ for extracting and manipulating data, using the best of DOM, CSS, and jquery-lik
 %{_javadocdir}/%{name}/*
 
 %changelog
+* Wed Jul 13 2022 xiaoqianlv <xiaoqian@nj.iscas.ac.cn> - 1.14.2-2
+- Make the imports of javax.annotation optional
+
 * Fri Sep 3 2021 houyingchao <houyingchao@huawei.com> - 1.14.2-1
 - Upgrade to 1.14.2
 
